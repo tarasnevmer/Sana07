@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,65 @@ namespace AbstractnessAndException.Products
 {
     public class Keyboard : Product
     {
-        public string TypeOfKeyboard { get; set; }
-        public string Connection { get; set; }
-        public string Layout { get; set; }
-        public string Color { get; set; }
-        public int Weight { get; set; }
+        private string typeOfKeyboard;
+        private string connection;
+        private string layout;
+        private string color;
+        private int weight;
+        public string TypeOfKeyboard
+        {
+            get { return typeOfKeyboard; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Тип клавіатури не може бути порожньою або містити лише пробіли!");
+                }
+                typeOfKeyboard = value;
+            }
+        }
+        public string Connection {
+            get { return connection; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Під'єднання не може бути порожньою або містити лише пробіли!");
+                }
+                connection = value;
+            }
+        }
+        public string Layout {
+            get { return layout; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Розкладка не може бути порожньою або містити лише пробіли!");
+                }
+                layout = value;
+            }
+        }
+        public string Color {
+            get { return color; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Колір не може бути порожньою або містити лише пробіли!");
+                }
+                color = value;
+            }
+        }
+        public int Weight {
+            get { return weight; }
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Вага не може бути від'ємною!");
+                weight = value;
+            }
+        }
 
         public Keyboard (string name, decimal price, int count,
             string typeOfKeyboard, string connection, string layout, 

@@ -5,7 +5,7 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 ShoppingCart cart = new ShoppingCart();
 
-Keyboard keyboard = new Keyboard("Клавіатура Hator Rockfall", 1999, 1, 
+Keyboard keyboard = new Keyboard("Клавіатура Hator Rockfall", -1999, 1, 
     "Механічна", "Дротове", "Eng/Ukr", "Чорний", 1155);
 Computer computer = new Computer("Комп'ютер Artline Gaming", 19299, 1, "GeForce GTX 1650", 
     "AMD Ryzen 5 3600", 16, 7, 480, 4);

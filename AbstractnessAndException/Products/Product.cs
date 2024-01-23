@@ -8,9 +8,38 @@ namespace AbstractnessAndException.Products
 {
     public abstract class Product
     {
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int Count { get; set; }
+        private string name = "Назва";
+        private decimal price;
+        private int count;
+
+        public string Name {
+            get { return name; } 
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Назва не може бути порожньою або містити лише пробіли!");
+                }
+                name = value;
+            }
+        
+        }
+        public decimal Price {
+            get { return price; }
+            set {
+                if (value < 0)
+                    throw new ArgumentException("Ціна не може бути від'ємною!");
+                price = value;
+            } 
+        }
+        public int Count {
+            get {return count; }
+            set {
+                if (value < 0)
+                    throw new ArgumentException("Кількість не може бути від'ємною!");
+                count = value;
+            } 
+        }
 
         public Product(string name, decimal price, int count)
         {

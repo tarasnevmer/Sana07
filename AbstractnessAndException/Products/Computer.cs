@@ -9,12 +9,69 @@ namespace AbstractnessAndException.Products
 {
     public class Computer: Product
     {
-        public string VideoCard {get;set;}
-        public string Processor { get;set;}
-        public int AmountOfRAM { get;set;}
-        public int Weight {get; set;}
-        public int SSDVolume { get; set;}
-        public int VideoMemory { get; set;}
+        private string videoCard;
+        private string processor;
+        private int amountOfRAM;
+        private int weight;
+        private int sSDVolume;
+        private int videoMemory;
+
+        public string VideoCard {
+            get {return videoCard; }
+            set 
+            {
+               if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Назва відеокарти не може бути порожньою або містити лише пробіли!");
+               videoCard = value;
+            }
+        }
+        public string Processor
+        {
+            get { return processor; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Назва процесору не може бути порожньою або містити лише пробіли!");
+                processor = value;
+            }
+        }
+        public int AmountOfRAM {
+            get {return amountOfRAM; }
+            set {
+                if (value < 0)
+                    throw new ArgumentException("Обсяг оперативної пам'яті не може бути від'ємним!");
+                amountOfRAM = value;
+            }
+        
+        }
+        public int Weight {
+            get { return weight; }
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Вага не може бути від'ємною!");
+                weight = value;
+            }
+        }
+        public int SSDVolume
+        {
+            get { return sSDVolume; }
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Обсяг SSD не може бути від'ємним!");
+                sSDVolume = value;
+            }
+        }
+        public int VideoMemory {
+            get { return videoMemory; }
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Обсяг відеопам'яті не може бути від'ємним!");
+                videoMemory = value;
+            }
+        }
 
         public Computer(string name, decimal price, int count, string videoCard, 
             string processor, int amountOfRAM, int weight, int sSDVolume, 
