@@ -17,12 +17,16 @@ namespace AbstractnessAndException
             items.Add(product);
         }
 
-        public void DisplayCart()
+        public string DisplayCart()
         {
+            string infoAllProducts = "";
+            int productNum = 1;
             foreach (var item in items)
             {
-                Console.WriteLine(item.Display());
+                infoAllProducts += $"{productNum}.\n{item.Display()}";
+                productNum++;
             }
+            return infoAllProducts;
         }
 
         public decimal CalculateTotal()

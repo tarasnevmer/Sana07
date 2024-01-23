@@ -34,11 +34,11 @@ namespace AbstractnessAndException.Products
                 $"Відеокарта: {VideoCard}\n" +
                 $"Процесор: {Processor}\n" +
                 $"Обсяг оперативної пам'яті: {AmountOfRAM}\n" +
-                $"Вага: {Weight}\n" +
-                $"Обсяг SSD: {SSDVolume}\n" +
-                $"Обсяг відеопам'яті: {VideoMemory}\n" +
+                $"Вага: {Weight} кг\n" +
+                $"Обсяг SSD: {SSDVolume} ГБ\n" +
+                $"Обсяг відеопам'яті: {VideoMemory} ГБ\n" +
                 $"Кількість: {Count}\n" +
-                $"Ціна: {Price}";
+                $"Ціна: {Price} грн.\n\n";
         }
     }
 }

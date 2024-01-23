@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace AbstractnessAndException.Products
 {
-    public class Monitor : Product
+    public class Screen : Product
     {
         public float DisplayDiagonal { get; set; }
         public string DisplayResolution { get; set; }
         public string TypeMatrix { get; set; }
         public int UpdateFrequency { get; set; }
 
-        public Monitor(string name, decimal price, int count, float displayDiagonal, 
+        public Screen(string name, decimal price, int count, float displayDiagonal, 
             string displayResolution, string typeMatrix, int updateFrequency)
             : base (name, price, count)
         { 
@@ -33,7 +33,7 @@ namespace AbstractnessAndException.Products
                 $"Тип матриці: {TypeMatrix}\n" +
                 $"Частота оновлення: {UpdateFrequency} Гц\n" +
                 $"Кількість: {Count}\n" +
-                $"Ціна: {Price}";
+                $"Ціна: {Price} грн.\n\n";
         }
 
     }

@@ -34,9 +34,9 @@ namespace AbstractnessAndException.Products
                 $"Під'єднання: {Connection}\n" +
                 $"Розкладка: {Layout}\n" +
                 $"Колір: {Color}\n" +
-                $"Вага: {Weight}\n" +
+                $"Вага: {Weight} гр.\n" +
                 $"Кількість: {Count}\n" +
-                $"Ціна: {Price}";
+                $"Ціна: {Price} грн.\n\n";
         }
 
     }
